@@ -4,8 +4,8 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
-    domains: ['cloudflare-ipfs.com'],
+    domains: [],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
