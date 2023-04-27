@@ -1,38 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ZKore
+## Project Description
+
+We build our on chain reputation proof service which named ZKore base on zero knowledge proof and soul bound token NFT.
+
+Our service could let people using their his/her social credits like twitter account and mapping the reputation credits to  S, A, B, C grade, then add to corresponding Semaphore group. After this step, ZKore will generate a proof by zero knowledge Semaphore protocol for user.
+
+After zero knowledge proof generated, user can use another wallet address which doesn't has any relationship to previous personal information and the proof to mint the corresponding soul bound token NFT.
+
+User can later use his/her wallet with soul bound token NFT to interact with other DAPP or application so that no any private information will be revealed.
+
+The soul bound token reputation NFT could proof in many reputation-needing situation, for example, on chain money borrowing, NFT whitelist, prevent Sybil Attack.
+
+## Demo Film
+
+
+https://user-images.githubusercontent.com/15665709/234754813-dd951885-5a21-492e-ac19-29e36c9378df.mp4
+
+
+## Team Description
+
+- Roy - Smart Contract Developer
+- Eric - Front End Developer
+- Allen - AI & ZK Engineer
+
+## Links
+- [ETHTaipei Hackathon 2023](https://taikai.network/ethtaipei/hackathons/hackathon/overview)
+- [Project Intro](https://taikai.network/ethtaipei/hackathons/hackathon/projects/clgrngou2137457001xfdtl5apz2/idea)
+- [Youtube Intro](https://www.youtube.com/watch?v=3hnuIYo0luo)
+- Github
+  - [Front End](https://github.com/ETHTaipei-Hachathon/ZKore-FE)
+  - [Smart Contract](https://github.com/ETHTaipei-Hachathon/ZKore)
+
+
+## Social credit calculation services
+
+- Twitter
+  - [twitterscore](https://twitterscore.io/)
+  - [tweetscout](https://tweetscout.io/)
+
+# Development 
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3100](http://localhost:3100) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Build Static Website
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+yarn build:exp
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Services
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Twitter (for twitter login) - [Twitter Developer Portal](https://developer.twitter.com/en/portal/projects/1649622597318119426/apps/26974710/settings)
+- Firebase (for twitter login) - [Firebase Console](https://console.firebase.google.com/project/rep-zkore/overview)
