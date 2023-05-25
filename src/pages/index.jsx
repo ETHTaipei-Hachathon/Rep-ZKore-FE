@@ -3,7 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SecurityIcon from '@mui/icons-material/Security';
 import TollIcon from '@mui/icons-material/Toll';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { CardMedia } from '@mui/material';
+import { CardMedia, TextField } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
@@ -72,6 +72,7 @@ export default function Home() {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [activeStep, setActiveStep] = useState(0);
   const [isShowProof, setShowProof] = useState(false);
+  const [isShowAddProof, setShowAddProof] = useState(false);
   const [isGenProof, setGenProof] = useState(false);
   const [isGetNFT, setGetNFT] = useState(false);
   const [isShowLoading, setShowLoading] = useState(false);
@@ -79,13 +80,16 @@ export default function Home() {
 
   const [isInit, setInit] = useState(false);
   const [twitterUser, setTwitterUser] = useState(auth.currentUser);
-  const [log, setLog] = useState('');
+
   // {
   //   uid: '1234567890',
   //   name: 'user',
   //   photoUrl: '',
   //   score: '',
   // }
+
+  const [log, setLog] = useState('');
+  const [proofText, setProofText] = useState(null);
 
   useEffect(() => {
     if (twitterUser) return;
@@ -461,11 +465,22 @@ export default function Home() {
                 justifyContent="center"
                 alignItems="center"
                 minHeight={400}
+                spacing={2}
               >
                 <Button
                   variant="contained"
-                  startIcon={<TollIcon />}
+                  startIcon={<SecurityIcon />}
                   disabled={isShowLoading}
+                  onClick={() => {
+                    setShowAddProof(true);
+                  }}
+                >
+                  Add Proof
+                </Button>
+                <Button
+                  variant="contained"
+                  startIcon={<TollIcon />}
+                  disabled={!proofText}
                   onClick={async () => {
                     if (!address) {
                       alert('Address is required');
@@ -474,10 +489,8 @@ export default function Home() {
                     try {
                       setShowLoading(true);
                       const txResult = await zkore.superMint(address);
-                      const x = await txResult.wait();
+                      await txResult.wait();
                       setLog('Minting NFT');
-                      console.log(txResult);
-                      console.log(x);
                       setShowLoading(true);
                       setGetNFT(true);
                       setActiveStep(steps.length - 1);
@@ -595,6 +608,39 @@ export default function Home() {
             autoFocus
           >
             Copy
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <Dialog
+        open={isShowAddProof}
+        onClose={() => setShowAddProof(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle>Add Your Proof</DialogTitle>
+        <DialogContent>
+          <DialogContentText width="500px">
+            <TextField
+              multiline
+              rows={30}
+              fullWidth
+              defaultValue={proofText}
+              onChange={(e) => {
+                setProofText(e.target.value);
+              }}
+            />
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setShowAddProof(false)}>Close</Button>
+          <Button
+            onClick={() => {
+              setShowAddProof(false);
+            }}
+            disabled={!proofText}
+            autoFocus
+          >
+            Confirm
           </Button>
         </DialogActions>
       </Dialog>
