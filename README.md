@@ -13,8 +13,14 @@ The soul bound token reputation NFT could proof in many reputation-needing situa
 
 ## Demo Film
 
+Zkore v1: User using userId to generate zk proof and mint NFT
 
 https://user-images.githubusercontent.com/15665709/234754813-dd951885-5a21-492e-ac19-29e36c9378df.mp4
+
+
+Zkore v2: User could add customized zk proof to mint NFT
+
+https://github.com/ZKore-Hachathon/ZKore-FE/assets/15665709/b843e129-950f-41d8-bed6-b4f619cec0a1
 
 
 ## Team Description
