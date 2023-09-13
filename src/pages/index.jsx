@@ -260,7 +260,7 @@ export default function Home() {
                 textDecoration: 'none',
               }}
             >
-              ZKore
+              ZKore V2
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

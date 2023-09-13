@@ -18,7 +18,9 @@
     "@semaphore-protocol/group": "^3.7.0",
     "@semaphore-protocol/identity": "^3.7.0",
     "@semaphore-protocol/proof": "^3.7.0",
+    "@wagmi/core": "^1.4.1",
     "add": "^2.0.6",
+    "axios": "^1.5.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "ethers": "^5",
@@ -26,6 +28,7 @@
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "snarkjs": "^0.6.10",
     "wagmi": "^0.12.12",
     "yarn": "^1.22.19"
@@ -38,7 +41,7 @@
     "prettier": "^2.8.7"
   },
   "engines": {
-    "node": ">=16.16.0",
-    "yarn": "1.22.19"
-  }
+    "node": "^18.16.0"
+  },
+  "packageManager": "^yarn@1.22.19"
 }
