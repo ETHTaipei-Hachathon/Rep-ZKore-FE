@@ -48,9 +48,10 @@ https://github.com/ZKore-Hachathon/ZKore-FE/assets/15665709/b843e129-950f-41d8-b
 
 ## Getting Started
 
-First, run the development server:
+First, install all dependency and run the development server:
 
 ```bash
+yarn install
 yarn dev
 ```
 
@@ -66,3 +67,6 @@ yarn build:exp
 
 - Twitter (for twitter login) - [Twitter Developer Portal](https://developer.twitter.com/en/portal/projects/1649622597318119426/apps/26974710/settings)
 - Firebase (for twitter login) - [Firebase Console](https://console.firebase.google.com/project/rep-zkore/overview)
+
+https://github.com/roy105703007/Zkore-ABCDE
+https://backend-demo-zkore.onrender.com/docs
